@@ -1,4 +1,4 @@
-package com.codenvy.example.java;
+package org.eclipse.che.examples;
 
 /**
  * Hello world!
