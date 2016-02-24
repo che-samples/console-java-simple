@@ -13,3 +13,7 @@ FROM [codenvy/ubuntu_jdk8](https://hub.docker.com/r/codenvy/ubuntu_jdk8/)
 # App output
 
 App output is streamed into a console. Note that if your app expects user input, do not use command but execute jars in the terminal directly.
+
+# Factory
+
+[![Contribute](https://codenvy.com/factory/resources/codenvy-contribute.svg)](http://beta.codenvy.com/f?id=omriatu352kkthua)
