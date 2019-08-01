@@ -1,18 +1,17 @@
-# desktop-java-simple
+# console-java-simple
 
-# Developer Workspace
+A simple java "Hello World!" application, buildable with both maven and gradle. Useful for testing Eclipse Che Java workspaces.
 
-[![Contribute](http://beta.codenvy.com/factory/resources/codenvy-contribute.svg)](http://beta.codenvy.com/f?id=omriatu352kkthua)
 
-# Recipe
+# Building manually
 
-FROM [codenvy/ubuntu_jdk8](https://hub.docker.com/r/codenvy/ubuntu_jdk8/)
+|        | Task  | Command                    |
+| ------ | ----- | -------------------------- |
+| Maven  | Build | `mvn clean install`        |
+|        | Run   | `java -jar ./target/*.jar` |
+| Gradle | Build | `gradle build`             |
+|        | Run   | `gradle run`               |
 
-# Commands
-
-| #       | Command           | 
-| :------------- |:------------- |
-| 1      | `mvn -f ${current.project.path} clean install && java -jar ${current.project.path}/target/*.jar` |
 
 # App output
 
