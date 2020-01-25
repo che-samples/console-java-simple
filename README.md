@@ -1,16 +1,14 @@
-# console-java-simple
+# console-scala-simple
 
-A simple java "Hello World!" application, buildable with both maven and gradle. Useful for testing Eclipse Che Java workspaces.
+A simple Scala "Hello World!" application, buildable with sbt. Useful for testing Eclipse Che Scala workspaces.
 
 
 # Building manually
 
-|        | Task  | Command                    |
-| ------ | ----- | -------------------------- |
-| Maven  | Build | `mvn clean install`        |
-|        | Run   | `java -jar ./target/*.jar` |
-| Gradle | Build | `gradle build`             |
-|        | Run   | `gradle run`               |
+| Task  | Command       |
+| ----- | ------------- |
+| Build | `sbt compile` |
+| Run   | `sbt run`     |
 
 
 # App output
