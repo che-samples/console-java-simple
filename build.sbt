@@ -1,12 +1,20 @@
 ThisBuild / scalaVersion := "2.12.11"
-ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / organization := "org.eclipse.che.examples"
 ThisBuild / organizationName := "examples"
 
-lazy val root = (project in file("."))
-  .settings(commonSettings)
+lazy val root = project
+  .in(file("."))
   .settings(
     name := "console-scala-simple",
+    publish / skip := true,
+  )
+  .aggregate(example)
+
+lazy val example = project
+  .in(file("example"))
+  .settings(commonSettings)
+  .settings(
+    name := "example",
     libraryDependencies ++= List(
       Dependencies.console4cats,
       Dependencies.scalaTest % Test,
@@ -15,17 +23,18 @@ lazy val root = (project in file("."))
 
 lazy val commonSettings: List[Def.Setting[_]] = List(
   libraryDependencies ++= List(
+    compilerPlugin(Dependencies.betterMonadicFor),
     compilerPlugin(Dependencies.kindProjector),
     compilerPlugin(Dependencies.silencer),
-    compilerPlugin(scalafixSemanticdb),
     Dependencies.silencerLib,
   ),
+  semanticdbEnabled := true, // enable SemanticDB
+  semanticdbVersion := scalafixSemanticdb.revision, // use Scalafix compatible version
   ThisBuild / scalafixDependencies ++= List(
-    Dependencies.sortImports,
+    Dependencies.organizeImports,
+    Dependencies.scaluzzi,
   ),
   scalacOptions ++= Seq(
-    "-Yrangepos",
-    "-Ywarn-unused",
     "-P:silencer:checkUnused",
   ),
 )

@@ -5,13 +5,19 @@
 package org.eclipse.che.examples
 
 import cats.effect._
-import cats.implicits._
 
 object HelloWorld extends IOApp {
 
   override def run(args: List[String]): IO[ExitCode] = {
-    val a = "Che"
-    Console.io.putStrLn(s"Hello World $a!") *> IO.pure(ExitCode.Success)
+    val che = "Che"
+    for {
+      greeting <- greet(che)
+      () <- Console.io.putStrLn(greeting)
+    } yield ExitCode.Success
+  }
+
+  def greet(name: String): IO[String] = {
+    IO.pure(s"Hello $name!")
   }
 
 }

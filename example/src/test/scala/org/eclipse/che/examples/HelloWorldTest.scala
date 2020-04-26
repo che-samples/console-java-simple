@@ -10,8 +10,8 @@ import org.scalatest.matchers.should.Matchers
 /**
   * Unit test for simple App.
   */
-class AppTest extends AnyFlatSpec with Matchers {
-  "testApp" should "assert true" in {
-    true shouldEqual true
+class HelloWorldTest extends AnyFlatSpec with Matchers {
+  "HelloWorld.greet" should "say Hello _!" in {
+    HelloWorld.greet("World").unsafeRunSync() should ===("Hello World!")
   }
 }
