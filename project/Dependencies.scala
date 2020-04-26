@@ -8,7 +8,7 @@ object Dependencies {
     val console4cats = "0.8.1"
     val kindProjector = "0.10.3"
     val organizeImports = "0.2.1"
-    val scalaTest = "3.1.0"
+    val scalaTest = "3.1.1"
     val scaluzzi = "0.1.6"
     val silencer = "1.6.0"
 
