@@ -15,6 +15,7 @@ lazy val example = project
   .settings(commonSettings)
   .settings(
     name := "example",
+    Compile / mainClass := Some("org.eclipse.che.examples.HelloWorld"),
     libraryDependencies ++= List(
       Dependencies.console4cats,
       Dependencies.scalaTest % Test,
