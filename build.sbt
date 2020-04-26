@@ -40,6 +40,11 @@ lazy val commonSettings: List[Def.Setting[_]] = List(
 )
 
 addCommandAlias(
+  "ci",
+  "; check; publishLocal",
+)
+
+addCommandAlias(
   "check",
   "; scalafmtSbtCheck; scalafmtCheckAll; compile:scalafix --check; test:scalafix --check",
 )
