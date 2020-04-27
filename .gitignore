@@ -3,3 +3,4 @@ target
 .metals
 .bloop
 project/metals.sbt
+idea-bloop.sbt

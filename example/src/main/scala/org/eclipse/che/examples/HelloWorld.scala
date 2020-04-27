@@ -12,7 +12,7 @@ object HelloWorld extends IOApp {
     val che = "Che"
     for {
       greeting <- greet(che)
-      () <- Console.io.putStrLn(greeting)
+      _ <- Console.io.putStrLn(greeting)
     } yield ExitCode.Success
   }
 

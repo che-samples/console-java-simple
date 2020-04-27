@@ -1,6 +1,6 @@
+Global / onChangedBuildSource := ReloadOnSourceChanges
+ThisBuild / turbo := true
 ThisBuild / scalaVersion := "2.12.11"
-ThisBuild / organization := "org.eclipse.che.examples"
-ThisBuild / organizationName := "examples"
 
 lazy val root = project
   .in(file("."))
@@ -23,33 +23,20 @@ lazy val example = project
   )
 
 lazy val commonSettings: List[Def.Setting[_]] = List(
-  libraryDependencies ++= List(
-    compilerPlugin(Dependencies.betterMonadicFor),
-    compilerPlugin(Dependencies.kindProjector),
-    compilerPlugin(Dependencies.silencer),
-    Dependencies.silencerLib,
-  ),
-  semanticdbEnabled := true, // enable SemanticDB
-  semanticdbVersion := scalafixSemanticdb.revision, // use Scalafix compatible version
-  ThisBuild / scalafixDependencies ++= List(
-    Dependencies.organizeImports,
-    Dependencies.scaluzzi,
-  ),
-  scalacOptions ++= Seq(
-    "-P:silencer:checkUnused",
+  organization := "org.eclipse.che.examples",
+  homepage := Some(url("https://github.com/sideeffffect/console-scala-simple")),
+  licenses := List("MIT" -> url("https://opensource.org/licenses/MIT")),
+  developers := List(
+    Developer(
+      "john.doe",
+      "John Doe",
+      "john.doe@redhat.com",
+      url("https://www.eclipse.org/che/"),
+    ),
   ),
 )
 
 addCommandAlias(
   "ci",
   "; check; publishLocal",
-)
-
-addCommandAlias(
-  "check",
-  "; scalafmtSbtCheck; scalafmtCheckAll; compile:scalafix --check; test:scalafix --check",
-)
-addCommandAlias(
-  "fix",
-  "; compile:scalafix; test:scalafix; scalafmtSbt; scalafmtAll",
 )
