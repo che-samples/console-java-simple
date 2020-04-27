@@ -36,7 +36,5 @@ lazy val commonSettings: List[Def.Setting[_]] = List(
   ),
 )
 
-addCommandAlias(
-  "ci",
-  "; check; publishLocal",
-)
+//addCommandAlias("ci", "; check; publishLocal")
+addCommandAlias("ci", "; publishLocal")
