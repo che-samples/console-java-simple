@@ -5,7 +5,7 @@ object Dependencies {
   object Versions {
 
     val console4cats = "0.8.1"
-    val scalaTest = "3.1.1"
+    val scalaTest = "3.1.2"
 
   }
 
