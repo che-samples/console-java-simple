@@ -4,3 +4,4 @@ target
 .bloop
 project/metals.sbt
 idea-bloop.sbt
+.theia
