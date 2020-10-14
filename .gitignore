@@ -2,6 +2,7 @@ target
 .vscode
 .metals
 .bloop
-project/metals.sbt
+metals.sbt
 idea-bloop.sbt
 .theia
+.bsp

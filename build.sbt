@@ -1,9 +1,10 @@
 Global / onChangedBuildSource := ReloadOnSourceChanges
 ThisBuild / turbo := true
-ThisBuild / scalaVersion := "2.12.11"
+ThisBuild / scalaVersion := "2.12.12"
 
 lazy val root = project
   .in(file("."))
+  .settings(commonSettings)
   .settings(
     name := "console-scala-simple",
     publish / skip := true,
@@ -34,6 +35,7 @@ lazy val commonSettings: List[Def.Setting[_]] = List(
       url("https://www.eclipse.org/che/"),
     ),
   ),
+//) ++ DecentScala.decentScalaSettings
 )
 
 //addCommandAlias("ci", "; check; publishLocal")

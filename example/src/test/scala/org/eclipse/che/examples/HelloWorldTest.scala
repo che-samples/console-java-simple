@@ -7,8 +7,7 @@ package org.eclipse.che.examples
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-/**
-  * Unit test for simple App.
+/** Unit test for simple App.
   */
 class HelloWorldTest extends AnyFlatSpec with Matchers {
   "HelloWorld.greet" should "say Hello _!" in {
